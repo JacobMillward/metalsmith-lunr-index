@@ -20,7 +20,7 @@ function plugin(opts) {
       var data = files[f];
       if (multimatch(f, opts.pattern).length) {
         documents.push({
-          'path': data.path,
+          'path': f,
           'body': sanitizeHtml(data.contents, { allowedTags: [], allowedAttributes: []})
                   .replace(/[\n\r\t]+/g, ' ') // Strip newline and carriage return symbols
                   .replace(/\s+/g, ' '), //Strip extra spaces
